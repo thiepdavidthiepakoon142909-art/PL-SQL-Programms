@@ -1,25 +1,17 @@
---calculate commission
+--Write a PL/SQL block that calculates the simple interest based on given
+--principal amount, rate of interest and number of years.
 
-set serveroutput on
+DECLARE
+p NUMBER :=&p;
+r NUMBER := &r; -- Rate of interest
+n NUMBER := &n; -- Time in years
+SI NUMBER;
 
-declare
-c NUMBER(5); 
-id number(4):=&id;
-sal NUMBER(8); 
-
-begin
-select salary INTO sal from salary where empid=id;
-dbms_output.put_line(sal);
-if sal <= 15000
-
-then
-c:= sal * 10 /100;
-update salary set Comm=c where empid=id;
-
-else
-c:= sal * 20 /100;
-update salary set Comm=c where empid=id;
-end if;
-
-end;
+BEGIN
+SI := (p * r * n ) / 100;
+DBMS_OUTPUT.PUT_LINE('Principal Amount: ' || p_principal);
+DBMS_OUTPUT.PUT_LINE('Rate of Interest: ' || p_rate || '%');
+DBMS_OUTPUT.PUT_LINE('Time Period: ' || p_time || ' years');
+DBMS_OUTPUT.PUT_LINE('Simple Interest: ' || SI);
+END;
 /
