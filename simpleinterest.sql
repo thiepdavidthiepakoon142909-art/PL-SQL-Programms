@@ -1,5 +1,4 @@
---Write a PL/SQL block that calculates the simple interest based on given
---principal amount, rate of interest and number of years.
+--calculates the simple interest 
 
 DECLARE
 p NUMBER :=&p;
